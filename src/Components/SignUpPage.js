@@ -23,20 +23,25 @@ const SignUpPage = ({createUser}) => {
             <h1 className='text-center text-success'>Create New Account</h1>
             <input type="text" placeholder='Enter Your First Name' className='my-2 form-control' onChange={(e)=>(setfirstname(e.target.value))}/>
             <input type="text" placeholder='Enter Your Last Name' className='my-2 form-control' onChange={(e)=>(setlastname(e.target.value))}/>
-            <input type="mail" placeholder='Enter Your Email Address' className='my-2 form-control' onChange={(e)=>(setemail(e.target.value))}/>
+            <input type="email" placeholder='Enter Your Email Address' className='my-2 form-control' onChange={(e)=>(setemail(e.target.value))}/>
             <input type="tel"  placeholder='Enter Your Phone Number' className='my-2 form-control' onChange={(e)=>(setphoneNum(e.target.value))}/>
-            <input type="date"  placeholder='Date of Birth:' className='my-2 form-control' onChange={(e)=>(setdateOfbirth(e.target.value))}/>
+            <div className='d-flex  my-2 form-control'>
+              <span>Date of birth:</span>
+              <input type="date"  placeholder='Date of Birth:' className='mx-2' onChange={(e)=>(setdateOfbirth(e.target.value))}/>
+            </div>
             <select  className='my-2 p-2 w-100 rounded-3' name="" id="" onChange={(e)=>(setgender(e.target.value))}>
               <option value="">Select Your Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
-            <input type="password" placeholder='Enter Your Password' className='my-2 form-control' onChange={(e)=>(setpassword(e.target.value))}/>
-            <input type="radio"/>
-            <span className='fw-bold m-2 '>I agree with <a href="">terms and conditions</a></span>
-            <span className='float-end'><a href="">Forgot Password?</a></span>
+            <input type="password" placeholder='Enter Your Password' className='mt-2 form-control' onChange={(e)=>(setpassword(e.target.value))}/>
+            <small className='float-end mb-2'><a href="">Forgot Password?</a></small>
+            <div className='text-center mt-5'>
+              <input type="checkbox"/>
+              <span className='fw-bold mx-2 '>I agree with <a href="">terms and conditions</a></span>
+            </div>
             <button className='btn btn-success w-100 my-2 fw-bold' onClick={()=>createUser({firstname,lastname,email,phoneNum,dateOfBirth,gender,password, regDate,regTime})}>Sign-Up</button>
-            <p>Already have an account? <a href="">Login here.</a></p>
+            <p className='text-center fw-bold'> Already have an account? <a href="">Login here.</a></p>
           </div>
         </div>
       </div>
