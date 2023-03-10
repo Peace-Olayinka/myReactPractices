@@ -70,11 +70,12 @@ const RegisteredUsers = ({allUsers, deleteUser, editUser}) => {
                 <div className="modal fade" data-bs-backdrop="static" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div className="modal-dialog">
                     <div className="modal-content">
-                      <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="exampleModalLabel">Welcome {editedUser.firstname}, edit your details here</h1>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div className="modal-header bg-success text-white">
+                        <h1 className="modal-title fs-4 " id="exampleModalLabel">Welcome {editedUser.firstname}</h1>
+                        <button type="button" className="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div className="modal-body">
+                        <h3 className='text-center text-success my-3'>Edit your details here:</h3>
                         <input type="text"  placeholder='Enter Your First Name' className='my-2 form-control' onChange={(e)=>setfirstname(e.target.value)} value={firstname}/>
                         <input type="text" placeholder='Enter Your Last Name' className='my-2 form-control' onChange={(e)=>(setlastname(e.target.value))} value={lastname}/>
                         <input type="email" placeholder='Enter Your Email Address' className='my-2 form-control' onChange={(e)=>(setemail(e.target.value))} value={email}/>
@@ -92,7 +93,7 @@ const RegisteredUsers = ({allUsers, deleteUser, editUser}) => {
                       </div>
                       <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={()=>editUser(editedIndex,{firstname,lastname,email,phoneNum,dateOfBirth,gender,password, regDate,regTime})}>Save changes</button>
+                        <button type="button" className="btn btn-success" data-bs-dismiss="modal" onClick={()=>editUser(editedIndex,{firstname,lastname,email,phoneNum,dateOfBirth,gender,password, regDate,regTime})}>Save changes</button>
                       </div>
                     </div>
                   </div>
