@@ -1,31 +1,13 @@
-import React from 'react'
-import { useState } from 'react'
-import SignUpPage from './Components/SignUpPage'
-import RegisteredUsers from './Components/RegisteredUsers'
+import React from "react";
+import SchoolPoortal from "./Components/SchoolPoortal";
+import TodoMain from "./Components/TodoMain";
 
 const App = () => {
-  const [allUsers, setallUsers] = useState([])
-  const createAccount=(newUser)=>{
-    setallUsers([...allUsers, newUser])
-    console.log(allUsers)
-  }
-  const deleteUser=(index)=>{
-    allUsers.splice(index,1)
-    setallUsers([...allUsers])
-    console.log(allUsers)
-  }
-  const editUser=(index, editedInfo)=>{
-    allUsers.splice(index, 1, editedInfo)
-    setallUsers([...allUsers])
-    console.log(allUsers)
-  }
- 
   return (
     <>
-      <SignUpPage createUser={createAccount}/>
-      <RegisteredUsers allUsers={allUsers} deleteUser={deleteUser} editUser={editUser}/>
+      <TodoMain />
+      <SchoolPoortal />
     </>
-  )
-}
-export default App
-
+  );
+};
+export default App;
